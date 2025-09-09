@@ -1,53 +1,61 @@
-## 🚀 Employee Resignation Prediction | XGBoost vs CatBoost Regressors
-![Employee Resignation Prediction](image.jpg)
+# 🚀 Employee Turnover Prediction Web App | A Customizable ML Framework
 
 ## 🌐 Overview
-This repository contains a project focused on predicting employee resignations. The dataset includes a variety of features related to employees, such as satisfaction level, last evaluation, and number of projects. The primary objective is to develop a predictive model that accurately determines whether an employee will leave the company. This prediction is essential for organizations as employee turnover can significantly impact productivity, operational planning, and expenses associated with recruiting, hiring, and training new employees.
+This project is an interactive, web-based tool for predicting employee turnover. It goes beyond a traditional Jupyter notebook by providing a flexible and user-friendly interface built with **Streamlit**. The application allows anyone to upload a custom HR dataset, select features, and train powerful machine learning models—**XGBoost** and **CatBoost**—on the fly to predict employee attrition.
+
+The prediction of employee turnover is a critical task for organizations, as it directly impacts productivity and incurs significant costs related to recruitment and training. This app addresses this challenge by providing a framework that is both powerful and accessible.
+
+---
 
 ## 🌟 Problem
-In this project, we aim to build a predictive model to determine whether an employee will leave the company, which is crucial for organizations as employee turnover affects productivity, operational planning, and recruiting expenses. The dataset contains various features related to employees, such as satisfaction level, last evaluation, and number of projects, which adds to the complexity of the model. The challenge lies in the data preprocessing steps, which include encoding categorical features, handling missing values, and tuning the hyperparameters of the models. Additionally, we are going to train XGBoost and CatBoost regressors, evaluate their performance using the right metrics, and interpret the models by analyzing the most important features in the context of employee resignations.
+The core challenge in building a generalized model is **adaptability**. Traditional machine learning scripts are often hardcoded to a specific dataset structure, making them brittle when new data is introduced.  
+This project solves that problem by:
 
-## 🎯 Objectives
-The objectives of the project are as follows:
+- **Dynamic UI Generation**: Automatically inferring data types and creating the appropriate input widgets for any given dataset.  
+- **On-the-fly Training**: Allowing users to select their own features and re-train the models directly within the web app.  
+- **Robustness**: Handling common issues like class imbalance and automatically converting non-numerical target variables.  
 
-* **Dataset Overview**: Investigate the dataset's basic information, including summary statistics for numerical and categorical variables.
-* **Conduct Extensive Exploratory Data Analysis (EDA)**:
-  - Analyze the distribution of numerical features against the target variable.
-  - Analyze the distribution of categorical features against the target variable.
-* **Data Preprocessing**:
-  - Check for missing values.
-  - Encode categorical features.
-* **Model Building**:
-  - Define XGBoost and CatBoost Regressors.
-  - Tune the hyperparameters for both models to achieve the best performance.
-  - Evaluate the performance of both models using regression metrics like MAE, MSE, RMSE, and R2 Score.
-* **Conclusion**: Summarize the findings, compare the performance of the models.
+---
 
-## 📚 Dataset Description
-The dataset comprises various metrics related to employees. The features of the dataset are described in the table below:
+## 🚀 App Features
+- **File Upload**: Upload your own employee dataset in CSV format.  
+- **Dynamic Feature Selection**: Choose which columns to use as features and which to use as the target variable.  
+- **Model Training**: Train XGBoost and CatBoost classifiers on your selected data with a single click.  
+- **Performance Evaluation**: Instantly view and compare model performance using key classification metrics like Accuracy, Precision, Recall, F1-Score, and ROC-AUC.  
+- **Live Prediction**: Use the trained models to get real-time predictions by entering custom values for each feature.  
 
-| __Variable__ | __Description__ |
-|     :---      |       :---      |      
-| __satisfaction_level__ | The level of satisfaction of the employee |
-| __last_evaluation__ | The score of the last evaluation of the employee |
-| __number_project__ | The number of projects the employee has worked on |
-| __average_montly_hours__ | The average monthly hours worked by the employee |
-| __time_spend_company__ | The number of years the employee has spent at the company |                     
-| __Work_accident__ | Whether the employee had a work accident (1 = yes, 0 = no) |
-| __left__ | Whether the employee has left the company (1 = yes, 0 = no) |  
-| __promotion_last_5years__ | Whether the employee had a promotion in the last 5 years (1 = yes, 0 = no) |                      
-| __sales__ | The department the employee works in |
-| __salary__ | The salary level of the employee (low, medium, high) |
+---
 
-## 📁 File Descriptions
-- 📓 **`Employee_Resignation_Prediction.ipynb`**: Jupyter notebook containing data exploration, visualization, modeling, and evaluation code.
-- 📁 **`HR.csv`**: CSV file containing the employee dataset.
-- 📘 **`README.md`**: This file, providing an overview of the project.
+## 📚 Repository Contents
+- **app.py**: The main Streamlit web application that runs the entire project. This single file contains the user interface, data handling, and calls to the other modules.  
+- **data_handler.py**: A module dedicated to loading data and handling the dynamic selection of features and target variables from the user interface.  
+- **model_trainer.py**: A module that encapsulates the entire model training and evaluation pipeline, including data preprocessing and performance metric calculation.  
+- **predictor.py**: A module containing the logic for making predictions on new data, ensuring the input is correctly preprocessed to match the trained model's format.  
+- **HR.csv**: A sample dataset used for demonstration and testing purposes.  
+- **requirements.txt**: A file listing all the necessary Python libraries for the project, ensuring a smooth deployment process.  
 
-## 🚀 Instructions for Local Execution
-1. **Clone this Repository**: Begin by cloning this repository to your local setup.
-2. **Open the Notebook**: Access the `Employee_Resignation_Prediction.ipynb` in Jupyter.
-3. **Install Dependencies**: Ensure all necessary Python libraries are installed for seamless execution.
-4. **Execution**: Run all cells in the notebook to witness the results and insights.
+---
 
+## 🚀 How to Run the App Locally
+
+**1. Clone this Repository:**
+
+git clone https://github.com/G-Ashrith/Employee-Turnover-Prediction.git
+
+**2. Navigate to the Project Directory**
+cd Employee-Turnover-Prediction
+
+**3. Install Dependencies** 
+pip install -r requirements.txt
+
+**4. Run the App** 
+streamlit run app.py
+
+
+**🌐 Deployment**
+   This application is deployed and publicly accessible via Streamlit Community Cloud.
+
+   Live Demo: https://g-ashrith-employee-turnover-prediction-streamlitwebapp-kgqpdq.streamlit.app/
+   Web App Screenshot: ![Web App Screenshot](Screenshots/webapp%20ss.png)
+  
 
