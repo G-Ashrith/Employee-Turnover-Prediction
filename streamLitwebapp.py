@@ -17,12 +17,12 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 # --- UI Configuration ---
 st.set_page_config(
     page_title="Customizable ML Framework",
-    page_icon="🧠",
+    page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-st.title("🧠 Customizable Employee Turnover Prediction")
+st.title("📊 Employee Turnover Prediction ")
 st.markdown("""
 Upload your dataset, select the columns you want to use, and train a
 machine learning model to predict employee turnover.
