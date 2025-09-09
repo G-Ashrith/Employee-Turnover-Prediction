@@ -6,6 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import missingno as msno
+
 from xgboost import XGBClassifier
 from catboost import CatBoostClassifier
 from sklearn.preprocessing import LabelEncoder
@@ -154,13 +155,3 @@ plt.title('Model Comparison (Classification)')
 plt.show()
 
 print("\nFinal Comparison:\n", combined_df)
-import joblib
-
-# Save the best models
-import os
-if not os.path.exists('models'):
-    os.makedirs('models')
-
-joblib.dump(best_xgb, 'models/best_xgb.pkl')
-joblib.dump(best_ctb, 'models/best_ctb.pkl')
-
